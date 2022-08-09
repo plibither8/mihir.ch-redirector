@@ -1,6 +1,6 @@
-# mihir-ch-redirector
+# 🔀 mihir-ch-redirector
 
-> Redirect all HTTP requests to https://mihir.ch.
+> Redirect all HTTP requests to [mihir.ch](https://mihir.ch).
 
 Hosted on Cloudflare Workers.
 
