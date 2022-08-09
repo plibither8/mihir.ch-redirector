@@ -1,13 +1,3 @@
 name = "mihir-ch-redirector"
-type = "javascript"
-zone_id = "377e8a5b5d216d9c2af8008390cceb07"
-account_id = "40d47c4c8102518f843f82d200738222"
-route = "mihir.chaturvedi.dev/*"
-workers_dev = true
-compatibility_date = "2022-03-18"
-
-[build]
-command = "npm install && npm run build"
-
-[build.upload]
-format = "service-worker"
+main = "src/index.ts"
+compatibility_date = "2022-08-09"
