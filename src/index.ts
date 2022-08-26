@@ -1,21 +1,14 @@
-import { Router } from "itty-router";
+import { Hono } from "hono";
 
-const router = Router();
+const app = new Hono();
 
-const base = "https://mihir.ch";
-const statusCode = 301;
-
-router.all("*", (request) => {
-  const url = new URL(request.url);
+app.all("*", (ctx) => {
+  const url = new URL(ctx.req.url);
   const { pathname, search, host } = url;
-  const destinationURL = `${base}${pathname}${search}${
+  const destinationURL = `https://mihir.ch${pathname}${search}${
     search ? "&" : "?"
   }from=${host}`;
-  return Response.redirect(destinationURL, statusCode);
+  return ctx.redirect(destinationURL, 301);
 });
 
-export default {
-  async fetch(request: Request): Promise<Response> {
-    return router.handle(request);
-  },
-};
+export default app;
